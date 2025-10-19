@@ -28,7 +28,11 @@ def send_notify():
 
 # === New squished window ===
 def open_new_page():
+    import pygame
     """Open a new window with a squished SATA ANDAGI image."""
+    pygame.mixer.init()
+    pygame.mixer.music.load("Sata_AndagiSFX.mp3")
+    pygame.mixer.music.play(-1)
     new_window = Toplevel(root)
     new_window.title("UNYA")
     new_window.geometry("350x350")
