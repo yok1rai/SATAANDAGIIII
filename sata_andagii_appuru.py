@@ -9,15 +9,22 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 # === Toast notification function ===
 def send_notify():
     """Send a Windows toast notification."""
-    if platform.system() == "Windows":
-        toaster = ToastNotifier()
-        toaster.show_toast(
-            "U MEAN YES?",
-            "SATA ANDAGIII!!!!!!!!",
-            duration=5,
-            icon_path=None,
-            threaded=True
-        )
+    try:
+        if platform.system() == "Windows":
+            toaster = ToastNotifier()
+            toaster.show_toast(
+                "U MEAN YES?",
+                "SATA ANDAGIII!!!!!!!!",
+                duration=5,
+                icon_path=None,
+                threaded=True
+            )
+        else:
+            from plyer import notification
+            notification.notify(title="U MEAN YES?", message="SATA ANDAGIII!!!!!!!!", timeout=5)
+    
+    except Exception as e:
+        print(f"Notification failed: {e}")
 
 # === New squished window ===
 def open_new_page():
