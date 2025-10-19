@@ -23,7 +23,7 @@ def send_notify():
 def open_new_page():
     """Open a new window with a squished SATA ANDAGI image."""
     new_window = Toplevel(root)
-    new_window.title("SATA ANDAGI Time 🍩")
+    new_window.title("UNYA")
     new_window.geometry("350x350")
 
     # Load and squish SATA ANDAGI image
@@ -53,7 +53,7 @@ root.title("SATA ANDAGI APP 🍩")
 root.geometry("420x450")
 
 # ✅ Set main window icon
-icon_img = Image.open("python_logo.png")
+icon_img = Image.open("sata_andagi1.png")
 icon_img = icon_img.resize((64, 64))
 root.icon = ImageTk.PhotoImage(icon_img)
 root.iconphoto(True, root.icon)
